@@ -1,0 +1,182 @@
+name: "Software Development Complete"
+domain: "software"
+description: "A comprehensive template for software development tasks, including architecture, implementation, testing, and deployment considerations."
+complexity_range: [3, 5]
+tags: ["coding", "development", "programming", "software engineering"]
+
+sections:
+  - name: "Task Description"
+    required: true
+    position: 1
+    description: "High-level overview of what needs to be built"
+    content_template: |
+      You are tasked with building {objective}. This will involve {key_components}.
+
+  - name: "Technical Requirements"
+    required: true
+    position: 2
+    description: "Specific technical details and requirements"
+    content_template: |
+      Please implement this with the following technical requirements:
+      
+      {requirements}
+      
+      The solution should be {quality_attributes}.
+
+  - name: "Architecture Overview"
+    required: true
+    position: 3
+    description: "System design and architecture guidance"
+    content_template: |
+      Design a clean architecture that separates concerns:
+      
+      1. Frontend/UI layer for user interaction
+      2. Business logic layer for core functionality
+      3. Data access layer for persistence
+      4. API layer for external communication
+      
+      Consider these architectural patterns: {architecture_patterns}.
+
+  - name: "Implementation Approach"
+    required: true
+    position: 4
+    description: "Specific guidance on implementation"
+    content_template: |
+      Follow these implementation guidelines:
+      
+      1. Use {language_stack} for development
+      2. Implement proper error handling throughout
+      3. Follow the principle of least privilege
+      4. Use dependency injection for better testability
+      5. Document all public interfaces and functions
+      
+      Start by implementing the core functionality first, then add additional features.
+
+  - name: "Data Model"
+    required: false
+    position: 5
+    description: "Data structure and relationship definitions"
+    content_template: |
+      Design a data model that includes these entities and relationships:
+      
+      {data_entities}
+      
+      Ensure proper normalization and indexing for performance.
+
+  - name: "Testing Strategy"
+    required: true
+    position: 6
+    description: "Approach to testing the solution"
+    content_template: |
+      Implement a comprehensive testing strategy:
+      
+      1. Unit tests for all core functions and components
+      2. Integration tests for interactions between modules
+      3. End-to-end tests for critical user flows
+      4. Performance tests for key operations
+      
+      Aim for at least 80% test coverage for critical components.
+
+  - name: "Security Considerations"
+    required: true
+    position: 7
+    description: "Security requirements and practices"
+    content_template: |
+      Address these security considerations:
+      
+      1. Input validation for all user inputs
+      2. Protection against common vulnerabilities (XSS, CSRF, SQLi)
+      3. Secure authentication and authorization
+      4. Data encryption for sensitive information
+      5. Regular security audits and updates
+
+  - name: "Performance Optimization"
+    required: false
+    position: 8
+    description: "Guidance on performance considerations"
+    content_template: |
+      Optimize performance by:
+      
+      1. Implementing caching for expensive operations
+      2. Using efficient algorithms and data structures
+      3. Minimizing database queries and optimizing them
+      4. Implementing pagination for large datasets
+      5. Using asynchronous processing for long-running tasks
+
+  - name: "Deployment Instructions"
+    required: false
+    position: 9
+    description: "How to deploy the solution"
+    content_template: |
+      Package the application for deployment:
+      
+      1. Create containerized deployment with Docker
+      2. Set up CI/CD pipeline for automated testing and deployment
+      3. Implement environment-specific configuration
+      4. Set up monitoring and logging
+      5. Create backup and restore procedures
+
+  - name: "Example Usage"
+    required: false
+    position: 10
+    description: "Examples of how to use the solution"
+    content_template: |
+      Here's an example of how to use the solution for a common use case:
+      
+      {usage_example}
+
+best_practices:
+  - "Use semantic versioning for releases"
+  - "Follow a consistent code style guide"
+  - "Write self-documenting code with clear names"
+  - "Implement proper error handling with meaningful messages"
+  - "Add monitoring and observability"
+  - "Create comprehensive documentation"
+  - "Use feature flags for controlled rollout"
+
+prompt_techniques:
+  - name: "Chain-of-thought"
+    enabled: true
+    position: "before_implementation"
+    content: |
+      Before implementing, think step-by-step about the components you'll need to build and how they'll interact.
+  
+  - name: "Self-review"
+    enabled: true
+    position: "after_implementation"
+    content: |
+      After implementing, review your code for correctness, performance, and security issues.
+  
+  - name: "Example-driven"
+    enabled: true
+    position: "throughout"
+    content: |
+      Where appropriate, provide examples to illustrate your thinking and implementation choices.
+
+conditional_sections:
+  - trigger:
+      key: "database_required"
+      value: true
+    add_sections:
+      - name: "Database Schema"
+        position: 5.5
+        content_template: |
+          Create the following database schema:
+          
+          {db_schema}
+          
+          Include appropriate indexes and constraints.
+  
+  - trigger:
+      key: "mobile_app"
+      value: true
+    add_sections:
+      - name: "Mobile Considerations"
+        position: 8.5
+        content_template: |
+          For mobile development:
+          
+          1. Implement responsive design for various screen sizes
+          2. Optimize battery usage and data consumption
+          3. Consider offline functionality
+          4. Test on multiple devices and OS versions 

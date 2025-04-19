@@ -1,0 +1,19 @@
+name: Medium Template
+domain: general
+complexity: 2
+template: |
+  As an AI assistant, I will help you create {objective}.
+  
+  Key Components:
+  {key_components}
+  
+  Requirements:
+  {requirements}
+  
+  Technology Stack:
+  {language_stack}
+  
+  Data Model:
+  {data_entities}
+  
+  Let me know if you need any clarification or have specific questions about any part of the implementation. 

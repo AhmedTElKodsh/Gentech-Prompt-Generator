@@ -1,0 +1,13 @@
+name: Simple Template
+domain: general
+complexity: 1
+template: |
+  As an AI assistant, I will help you create {objective}.
+  
+  Key Components:
+  {key_components}
+  
+  Requirements:
+  {requirements}
+  
+  Let me know if you need any clarification or have specific questions about any part of the implementation. 

@@ -1,0 +1,85 @@
+name: General Purpose Template
+domain: general
+description: A versatile template for general purpose prompting across various domains
+complexity_range: [1, 4]
+tags:
+  - general
+  - versatile
+  - standard
+
+sections:
+  - name: Context
+    position: 1
+    required: true
+    description: General context and background information
+    content_template: >
+      {objective}
+      
+      You are tasked with the following objective: {objective}
+      
+      Consider the following context:
+      - Domain: {domain}
+      - Task: {task}
+      - Complexity: {complexity}
+
+  - name: Instructions
+    position: 2
+    required: true
+    description: Specific instructions for the AI
+    content_template: >
+      Please complete this task with the following considerations:
+      - Focus on clarity and precision
+      - Be thorough yet concise
+      - Provide a complete solution
+      - Structure your response logically
+
+  - name: Format
+    position: 3
+    required: false
+    description: Expected output format
+    content_template: >
+      Format your response as follows:
+      
+      1. Begin with a summary of your approach
+      2. Provide detailed steps or content
+      3. End with any relevant considerations or next steps
+
+  - name: Constraints
+    position: 4
+    required: false
+    description: Any constraints or limitations
+    content_template: >
+      Constraints:
+      - Keep your response within reasonable length
+      - Focus on practical, implementable solutions
+      - Avoid unnecessary technical jargon unless required
+      - {additional_constraints}
+
+best_practices:
+  - Use clear and concise language
+  - Structure information logically
+  - Provide complete solutions
+  - Consider the audience's knowledge level
+  - Include examples when helpful
+
+conditional_sections:
+  - trigger:
+      key: use_examples
+      value: true
+    add_sections:
+      - name: Examples
+        position: 5
+        description: Examples to guide the AI
+        content_template: >
+          Examples:
+          {examples}
+          
+          Use these examples as guidance for the expected style and approach.
+
+prompt_techniques:
+  - name: RolePromptingTechnique
+    applicability: high
+  - name: ChainOfThoughtTechnique
+    applicability: medium
+  - name: FewShotTechnique
+    applicability: low 

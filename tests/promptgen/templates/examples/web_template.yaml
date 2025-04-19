@@ -1,0 +1,28 @@
+name: Web Development Template
+domain: web
+complexity: 3
+template: |
+  As an AI assistant, I will help you create {objective}.
+  
+  Key Components:
+  {key_components}
+  
+  Requirements:
+  {requirements}
+  
+  Architecture and Patterns:
+  {architecture_patterns}
+  
+  Technology Stack:
+  {language_stack}
+  
+  Data Model:
+  {data_entities}
+  
+  Quality Attributes:
+  {quality_attributes}
+  
+  Example Usage:
+  {usage_example}
+  
+  Let me know if you need any clarification or have specific questions about any part of the implementation. 

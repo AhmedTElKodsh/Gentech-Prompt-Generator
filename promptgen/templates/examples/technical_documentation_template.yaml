@@ -1,0 +1,164 @@
+name: Technical Documentation Template
+domain: technical_documentation
+description: A template designed for creating clear and comprehensive technical documentation
+complexity_range: [1, 5]
+tags:
+  - documentation
+  - technical writing
+  - developer docs
+  - user guides
+
+sections:
+  - name: Context
+    position: 1
+    required: true
+    description: The context and purpose of the documentation
+    content_template: >
+      Documentation Overview:
+      
+      - Document Type: {document_type} (API Reference, User Guide, Tutorial, etc.)
+      - Target Product/Service: {product_name} version {version_number}
+      - Target Audience: {target_audience} with {expertise_level} expertise level
+      - Documentation Goal: {documentation_goal}
+      - Related Documents: {related_documents}
+
+  - name: DocumentStructure
+    position: 2
+    required: true
+    description: The overall structure of the documentation
+    content_template: >
+      Document Structure:
+      
+      1. Introduction
+         - Purpose: {purpose_statement}
+         - Scope: {scope_description}
+         - Prerequisites: {prerequisites}
+      
+      2. Main Content Sections
+         {main_sections}
+      
+      3. Common Elements for Each Section
+         - Explanatory text that {explanation_approach}
+         - Code examples that demonstrate {code_example_focus}
+         - Visual elements that illustrate {visual_element_purpose}
+      
+      4. Conclusion/Summary
+         - Key takeaways: {key_takeaways}
+         - Next steps: {next_steps}
+
+  - name: StyleGuide
+    position: 3
+    required: true
+    description: Style guidelines for the documentation
+    content_template: >
+      Style Guidelines:
+      
+      - Voice and Tone: {voice_and_tone}
+      - Terminology: Use {terminology_consistency} approach to technical terms
+      - Text Formatting: {formatting_guidelines}
+      - Code Examples: {code_example_style}
+      - Visual Elements: {visual_element_guidelines}
+      - Cross-references: Use {cross_reference_style} for internal references
+
+  - name: ExampleTemplates
+    position: 4
+    required: false
+    description: Templates for common documentation patterns
+    content_template: >
+      Example Templates:
+      
+      1. Feature Description Template:
+         ```
+         ## Feature: {feature_name}
+         
+         {feature_description}
+         
+         ### Use Cases
+         {use_cases}
+         
+         ### Configuration
+         {configuration_options}
+         
+         ### Examples
+         {examples}
+         ```
+      
+      2. API Endpoint Template:
+         ```
+         ## {http_method} {endpoint_path}
+         
+         {endpoint_description}
+         
+         ### Request Parameters
+         {request_parameters}
+         
+         ### Response Format
+         {response_format}
+         
+         ### Example Request
+         {example_request}
+         
+         ### Example Response
+         {example_response}
+         ```
+      
+      3. Troubleshooting Entry Template:
+         ```
+         ## Issue: {issue_description}
+         
+         ### Symptoms
+         {symptoms}
+         
+         ### Cause
+         {cause}
+         
+         ### Resolution
+         {resolution_steps}
+         ```
+
+conditional_sections:
+  - trigger:
+      key: include_api_docs
+      value: true
+    add_sections:
+      - name: APIDocumentationGuidelines
+        position: 5
+        description: Specific guidelines for API documentation
+        content_template: >
+          API Documentation Guidelines:
+          
+          - Authentication: Describe {authentication_method} with {auth_examples}
+          - Request/Response Formats: Document using {format_style}
+          - Error Handling: Explain {error_handling_approach}
+          - Rate Limiting: Document {rate_limit_details}
+          - Versioning Information: Include {versioning_approach}
+          - Endpoint Organization: Group by {endpoint_organization}
+
+  - trigger:
+      key: include_user_guide
+      value: true
+    add_sections:
+      - name: UserGuideGuidelines
+        position: 5
+        description: Specific guidelines for user guides
+        content_template: >
+          User Guide Guidelines:
+          
+          - Task-Based Organization: Structure around {common_user_tasks}
+          - Progressive Disclosure: Present information using {information_layering}
+          - User Interface References: Document UI elements using {ui_reference_style}
+          - Procedural Writing: Format steps using {procedure_format}
+          - Screenshots and Annotations: Include {screenshot_guidelines}
+          - Accessibility Considerations: Address {accessibility_features}
+
+prompt_techniques:
+  - name: TechnicalClarityTechnique
+    applicability: high
+  - name: ContextAwareExplanationTechnique
+    applicability: high
+  - name: CodeExampleGenerationTechnique
+    applicability: medium
+  - name: VisualDescriptionTechnique
+    applicability: medium
+  - name: StructuredInformationTechnique
+    applicability: high 

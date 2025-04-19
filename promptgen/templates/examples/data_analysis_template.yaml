@@ -1,0 +1,122 @@
+name: Data Analysis Template
+domain: data_analysis
+description: A template designed for data analysis, visualization, and interpretation tasks
+complexity_range: [1, 5]
+tags:
+  - data science
+  - analytics
+  - statistics
+  - visualization
+
+sections:
+  - name: Context
+    position: 1
+    required: true
+    description: The data analysis context and objectives
+    content_template: >
+      You are a data analyst with expertise in {analysis_domain}.
+      
+      Project Overview:
+      - Dataset: {dataset_description}
+      - Analysis Goal: {analysis_goal}
+      - Target Audience: {audience}
+      - Required Output Format: {output_format}
+
+  - name: DataDescription
+    position: 2
+    required: true
+    description: Detailed description of the dataset
+    content_template: >
+      Dataset Details:
+      
+      - Data Source: {data_source}
+      - Time Period: {time_period}
+      - Key Variables: {key_variables}
+      - Data Quality Concerns: {quality_issues}
+      - Data Size: {data_size}
+      - Data Structure: {data_structure}
+
+  - name: AnalysisApproach
+    position: 3
+    required: true
+    description: The analytical approach to be used
+    content_template: >
+      Analytical Approach:
+      
+      1. Data Preprocessing:
+         - Handle missing values using {missing_value_strategy}
+         - Transform data using {transformation_methods}
+         - Address outliers with {outlier_handling}
+      
+      2. Exploratory Analysis:
+         - Generate descriptive statistics for {key_variables}
+         - Create exploratory visualizations focused on {visualization_focus}
+         - Identify patterns and relationships between {relationship_variables}
+      
+      3. Statistical Methods:
+         - Apply {statistical_tests} to test hypotheses
+         - Use {modeling_approach} for predictive insights
+         - Validate findings using {validation_method}
+      
+      4. Interpretation Framework:
+         - Connect findings to {business_context}
+         - Address specific questions about {key_questions}
+         - Consider limitations including {analysis_limitations}
+
+  - name: VisualizationGuidelines
+    position: 4
+    required: false
+    description: Guidelines for data visualization
+    content_template: >
+      Visualization Guidelines:
+      
+      - Chart Types: {recommended_chart_types}
+      - Color Scheme: {color_scheme}
+      - Accessibility Considerations: {accessibility_requirements}
+      - Key Elements to Highlight: {highlight_elements}
+      - Annotation Requirements: {annotation_guidelines}
+
+conditional_sections:
+  - trigger:
+      key: include_recommendations
+      value: true
+    add_sections:
+      - name: ActionableInsights
+        position: 5
+        description: Guidelines for developing actionable recommendations
+        content_template: >
+          Actionable Insight Development:
+          
+          - Connect insights directly to {business_objectives}
+          - Prioritize recommendations based on {prioritization_criteria}
+          - Include implementation considerations for {implementation_context}
+          - Quantify potential impact in terms of {impact_metrics}
+          - Address potential challenges to implementation including {potential_challenges}
+
+  - trigger:
+      key: include_technical_code
+      value: true
+    add_sections:
+      - name: CodeGuidelines
+        position: 6
+        description: Guidelines for code development and presentation
+        content_template: >
+          Code Development Guidelines:
+          
+          - Preferred Language/Libraries: {preferred_technology}
+          - Code Structure: Prioritize {code_priorities}
+          - Documentation Level: {documentation_level}
+          - Performance Considerations: {performance_requirements}
+          - Reproducibility Requirements: {reproducibility_guidelines}
+
+prompt_techniques:
+  - name: DataExplorationTechnique
+    applicability: high
+  - name: HypothesisGenerationTechnique
+    applicability: medium
+  - name: InsightNarrativeTechnique
+    applicability: high
+  - name: VisualizationSelectionTechnique
+    applicability: high
+  - name: BusinessContextInterpretationTechnique
+    applicability: medium 

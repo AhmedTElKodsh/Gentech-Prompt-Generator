@@ -1,0 +1,205 @@
+name: "Content Marketing Complete"
+domain: "content"
+description: "A comprehensive template for content marketing tasks, including audience analysis, messaging, SEO, and distribution strategies."
+complexity_range: [3, 5]
+tags: ["marketing", "content", "copywriting", "seo", "social media"]
+
+sections:
+  - name: "Content Objective"
+    required: true
+    position: 1
+    description: "High-level goal of the content piece"
+    content_template: |
+      Create {content_type} focused on {topic} with the primary goal of {objective}. This content should help the target audience {audience_goal}.
+
+  - name: "Audience Analysis"
+    required: true
+    position: 2
+    description: "Details about the target audience"
+    content_template: |
+      Your target audience has the following characteristics:
+      
+      - Demographics: {demographics}
+      - Psychographics: {psychographics}
+      - Pain points: {pain_points}
+      - Desires: {desires}
+      - Content consumption habits: {consumption_habits}
+      
+      Tailor your messaging to address their specific needs and preferences.
+
+  - name: "Key Messaging"
+    required: true
+    position: 3
+    description: "Core messages and value propositions"
+    content_template: |
+      Incorporate these key messages into your content:
+      
+      1. Primary message: {primary_message}
+      2. Supporting points:
+         - {supporting_point_1}
+         - {supporting_point_2}
+         - {supporting_point_3}
+      3. Unique value proposition: {value_proposition}
+      
+      Ensure these messages align with the brand voice and resonate with the audience.
+
+  - name: "Content Structure"
+    required: true
+    position: 4
+    description: "Organization and flow of the content"
+    content_template: |
+      Structure your content as follows:
+      
+      1. Attention-grabbing hook that addresses {pain_point}
+      2. Introduction that establishes relevance and credibility
+      3. Main body with {number_of_sections} key sections, each focused on a specific aspect
+      4. Supporting evidence including statistics, examples, and stories
+      5. Clear call-to-action that prompts the reader to {desired_action}
+      
+      Use subheadings, bullet points, and short paragraphs to enhance readability.
+
+  - name: "Tone and Voice"
+    required: true
+    position: 5
+    description: "Stylistic guidelines for the content"
+    content_template: |
+      Write in a tone that is {tone_attributes}. The brand voice should come across as {voice_attributes}.
+      
+      Use {formality_level} language that resonates with the target audience. {specific_style_guidance}.
+
+  - name: "SEO Optimization"
+    required: true
+    position: 6
+    description: "Search engine optimization guidance"
+    content_template: |
+      Optimize the content for search engines with these guidelines:
+      
+      - Primary keyword: {primary_keyword}
+      - Secondary keywords: {secondary_keywords}
+      - Include keywords naturally in headings, first paragraph, and throughout the content
+      - Aim for a keyword density of 1-2%
+      - Create a compelling meta description that includes the primary keyword
+      - Use semantic keywords related to the main topic
+      
+      Ensure the content answers user intent while maintaining readability.
+
+  - name: "Content Enhancement"
+    required: false
+    position: 7
+    description: "Elements to enhance engagement"
+    content_template: |
+      Enhance the content with:
+      
+      1. Relevant statistics and data points to build credibility
+      2. Real-world examples or case studies that illustrate key points
+      3. Storytelling elements that create emotional connection
+      4. Analogies or metaphors that simplify complex concepts
+      5. Visual elements like {suggested_visuals}
+      
+      These enhancements should support the main message and improve comprehension.
+
+  - name: "Call-to-Action"
+    required: true
+    position: 8
+    description: "Guidance on effective CTAs"
+    content_template: |
+      Create a compelling call-to-action that:
+      
+      1. Clearly states what action you want the reader to take
+      2. Communicates the value or benefit of taking that action
+      3. Creates a sense of urgency or importance
+      4. Uses action-oriented language
+      5. Is prominently placed within the content
+      
+      The primary CTA should be: {primary_cta}
+
+  - name: "Distribution Strategy"
+    required: false
+    position: 9
+    description: "How to distribute and promote the content"
+    content_template: |
+      After creating the content, distribute it through:
+      
+      1. Primary channels: {primary_channels}
+      2. Secondary channels: {secondary_channels}
+      3. Promotional strategies:
+         - {promotion_strategy_1}
+         - {promotion_strategy_2}
+      4. Repurposing opportunities: {repurposing_ideas}
+      
+      Tailor the messaging slightly for each platform while maintaining consistency.
+
+  - name: "Performance Measurement"
+    required: false
+    position: 10
+    description: "Metrics to track content performance"
+    content_template: |
+      Measure the content's performance using these metrics:
+      
+      1. Engagement metrics: {engagement_metrics}
+      2. Conversion metrics: {conversion_metrics}
+      3. SEO metrics: {seo_metrics}
+      4. Target benchmarks: {target_benchmarks}
+      
+      Use these insights to refine future content.
+
+best_practices:
+  - "Focus on benefits rather than features"
+  - "Use concrete, specific language rather than vague generalizations"
+  - "Back up claims with evidence and social proof"
+  - "Address potential objections proactively"
+  - "Make content skimmable with clear headings and bullet points"
+  - "Use active voice and direct address"
+  - "Remove unnecessary jargon unless writing for experts"
+  - "Maintain consistent branding throughout"
+
+prompt_techniques:
+  - name: "Audience-first thinking"
+    enabled: true
+    position: "before_writing"
+    content: |
+      Before writing, deeply consider who will be reading this content, what they care about, and how this content will help them. Always prioritize the reader's needs over promotional messaging.
+  
+  - name: "Empathy mapping"
+    enabled: true
+    position: "during_planning"
+    content: |
+      Consider what the audience is thinking, feeling, saying, and doing in relation to this topic. Use these insights to create more resonant content.
+  
+  - name: "Rule of three"
+    enabled: true
+    position: "throughout"
+    content: |
+      When possible, organize key points in groups of three, as this structure tends to be memorable and persuasive.
+
+conditional_sections:
+  - trigger:
+      key: "content_type"
+      value: "blog_post"
+    add_sections:
+      - name: "Blog-Specific Formatting"
+        position: 4.5
+        content_template: |
+          Format this blog post for maximum engagement:
+          
+          1. Create a compelling headline using {headline_formula}
+          2. Include an estimated reading time at the beginning
+          3. Break up text with pull quotes or highlighted text
+          4. End with a discussion question to encourage comments
+          5. Include internal links to at least 3 related pieces of content
+  
+  - trigger:
+      key: "content_type"
+      value: "social_media"
+    add_sections:
+      - name: "Platform-Specific Guidelines"
+        position: 4.5
+        content_template: |
+          Adapt the content for these social platforms:
+          
+          - LinkedIn: Professional tone, include industry insights
+          - Instagram: Visual focus with concise, emotionally resonant copy
+          - Twitter: Punchy, conversation-starting format with relevant hashtags
+          - Facebook: Conversational tone that encourages sharing and discussion
+          
+          Create tailored versions for each platform while maintaining message consistency. 

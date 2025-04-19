@@ -1,0 +1,106 @@
+name: Programming Task Template
+domain: programming
+description: A template designed for programming and software development tasks
+complexity_range: [2, 5]
+tags:
+  - programming
+  - software development
+  - coding
+
+sections:
+  - name: Context
+    position: 1
+    required: true
+    description: Task context and programming environment
+    content_template: >
+      You are a senior software developer tasked with the following programming challenge:
+      
+      {objective}
+      
+      Technical Environment:
+      - Language/Platform: {language}
+      - Project Type: {project_type}
+      - Complexity Level: {complexity}
+
+  - name: Requirements
+    position: 2
+    required: true
+    description: Specific technical requirements
+    content_template: >
+      Requirements:
+      
+      1. Functional Requirements:
+         {functional_requirements}
+      
+      2. Technical Requirements:
+         - Code must be well-documented
+         - Follow best practices for {language}
+         - Maintain clean, maintainable code structure
+         - Include error handling
+         {additional_technical_requirements}
+
+  - name: CodeStructure
+    position: 3
+    required: true
+    description: Expected code structure
+    content_template: >
+      Structure your solution as follows:
+      
+      1. Begin with a high-level overview of your approach
+      2. Provide the complete code implementation
+      3. Include explanations for complex or non-obvious parts
+      4. Document any assumptions made
+      5. Suggest tests or validation approaches
+
+  - name: BestPractices
+    position: 4
+    required: false
+    description: Best practices for the specific language or domain
+    content_template: >
+      Ensure your implementation follows these best practices:
+      
+      - Follow {language} conventions and idioms
+      - Use appropriate design patterns when applicable
+      - Optimize for readability first, then performance
+      - Consider edge cases and robustness
+      - Include appropriate comments and documentation
+
+conditional_sections:
+  - trigger:
+      key: include_examples
+      value: true
+    add_sections:
+      - name: Examples
+        position: 5
+        description: Example code snippets or approaches
+        content_template: >
+          Reference Examples:
+          
+          {code_examples}
+          
+          Use these examples only as guidance, not as direct solutions.
+
+  - trigger:
+      key: testing_required
+      value: true
+    add_sections:
+      - name: Testing
+        position: 6
+        description: Testing instructions
+        content_template: >
+          Testing Approach:
+          
+          1. Provide unit tests for critical components
+          2. Include test cases covering edge cases
+          3. Suggest integration testing approaches if applicable
+          4. Describe how to validate the solution works as expected
+
+prompt_techniques:
+  - name: PseudocodeTechnique
+    applicability: high
+  - name: StepByStepDecompositionTechnique
+    applicability: high
+  - name: TestDrivenDesignTechnique
+    applicability: medium
+  - name: RefactoringTechnique
+    applicability: low 

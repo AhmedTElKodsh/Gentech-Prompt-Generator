@@ -1,0 +1,105 @@
+name: "Simple Software Development"
+domain: "software"
+description: "A simpler template for basic software development tasks, ideal for small applications and scripts."
+complexity_range: [1, 2]
+tags: ["coding", "development", "programming", "beginner"]
+
+sections:
+  - name: "Task Description"
+    required: true
+    position: 1
+    description: "High-level overview of what needs to be built"
+    content_template: |
+      You are tasked with building {objective}.
+
+  - name: "Requirements"
+    required: true
+    position: 2
+    description: "Basic requirements for the project"
+    content_template: |
+      Please include the following features:
+      
+      {requirements}
+      
+      The solution should be {quality_attributes}.
+
+  - name: "Implementation Approach"
+    required: true
+    position: 3
+    description: "Basic implementation guidance"
+    content_template: |
+      Implement this solution using {language_stack}.
+      
+      Focus on:
+      1. Clean, readable code
+      2. Basic error handling
+      3. Simple documentation
+
+  - name: "Code Structure"
+    required: true
+    position: 4
+    description: "Simple code organization"
+    content_template: |
+      Structure your code with these components:
+      
+      1. Main functionality
+      2. Helper functions/methods
+      3. Basic validation
+
+  - name: "Testing"
+    required: false
+    position: 5
+    description: "Basic testing approach"
+    content_template: |
+      Test your solution with:
+      
+      1. Basic functionality tests
+      2. Simple edge cases
+      3. Input validation checks
+
+best_practices:
+  - "Keep the code simple and focused"
+  - "Use descriptive variable and function names"
+  - "Add comments for clarity where needed"
+  - "Handle basic error conditions"
+  - "Test the core functionality"
+
+prompt_techniques:
+  - name: "Step-by-step"
+    enabled: true
+    position: "throughout"
+    content: |
+      Break down complex operations into simple steps.
+  
+  - name: "Example-driven"
+    enabled: true
+    position: "after_implementation"
+    content: |
+      Provide a simple example of how to use the code.
+
+conditional_sections:
+  - trigger:
+      key: "user_interface"
+      value: true
+    add_sections:
+      - name: "User Interface"
+        position: 3.5
+        content_template: |
+          Create a simple user interface with:
+          
+          1. Clear, intuitive controls
+          2. Basic feedback for user actions
+          3. Simple error messages
+  
+  - trigger:
+      key: "data_storage"
+      value: true
+    add_sections:
+      - name: "Data Storage"
+        position: 4.5
+        content_template: |
+          Implement basic data storage:
+          
+          1. Use {storage_type} for data persistence
+          2. Include basic data validation
+          3. Handle simple read/write operations 

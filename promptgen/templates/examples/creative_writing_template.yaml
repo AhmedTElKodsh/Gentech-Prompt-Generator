@@ -1,0 +1,112 @@
+name: Creative Writing Template
+domain: creative_writing
+description: A template designed for creative writing, storytelling, and narrative development
+complexity_range: [1, 5]
+tags:
+  - creative
+  - storytelling
+  - narrative
+  - writing
+
+sections:
+  - name: Context
+    position: 1
+    required: true
+    description: The creative writing context and objectives
+    content_template: >
+      You are a professional creative writer with expertise in {genre} storytelling.
+      
+      Project Overview:
+      - Story Type: {story_type}
+      - Target Audience: {audience}
+      - Estimated Length: {length}
+      - Tone: {tone}
+
+  - name: StoryElements
+    position: 2
+    required: true
+    description: Core elements of the narrative
+    content_template: >
+      Narrative Elements:
+      
+      1. Setting:
+         {setting_description}
+      
+      2. Characters:
+         {character_descriptions}
+      
+      3. Core Conflict:
+         {conflict_description}
+      
+      4. Theme:
+         {theme_description}
+
+  - name: StoryStructure
+    position: 3
+    required: true
+    description: Expected narrative structure
+    content_template: >
+      Structure your narrative using the following framework:
+      
+      1. Introduction/Hook: Engage the reader immediately with {hook_element}
+      2. Rising Action: Develop tension through {tension_elements}
+      3. Climax: Build toward a meaningful turning point involving {climax_focus}
+      4. Resolution: Conclude with {resolution_approach}
+      5. Ensure narrative cohesion throughout
+
+  - name: StyleGuidelines
+    position: 4
+    required: false
+    description: Specific stylistic requirements
+    content_template: >
+      Stylistic Guidelines:
+      
+      - Voice: {narrative_voice}
+      - Point of View: {pov}
+      - Language Style: {language_style}
+      - Imagery Focus: {imagery_focus}
+      - Dialogue Style: {dialogue_style}
+
+conditional_sections:
+  - trigger:
+      key: include_dialogue
+      value: true
+    add_sections:
+      - name: DialogueGuidelines
+        position: 5
+        description: Guidelines for character dialogue
+        content_template: >
+          Dialogue Guidelines:
+          
+          - Character voices should be distinct and consistent
+          - Dialogue should reveal character traits and advance the plot
+          - Balance dialogue with action and description
+          - Use dialogue to create subtext and emotional depth
+          {additional_dialogue_guidelines}
+
+  - trigger:
+      key: series_installment
+      value: true
+    add_sections:
+      - name: SeriesContinuity
+        position: 6
+        description: Guidelines for maintaining continuity with previous installments
+        content_template: >
+          Series Continuity:
+          
+          - Reference established events: {previous_events}
+          - Maintain character consistency: {character_continuity}
+          - Advance overarching themes: {series_themes}
+          - Introduce new elements while honoring existing world rules
+
+prompt_techniques:
+  - name: CharacterVoiceTechnique
+    applicability: high
+  - name: ShowDontTellTechnique
+    applicability: high
+  - name: EmotionalResonanceTechnique
+    applicability: medium
+  - name: WorldBuildingTechnique
+    applicability: medium
+  - name: NarrativeHookTechnique
+    applicability: high 

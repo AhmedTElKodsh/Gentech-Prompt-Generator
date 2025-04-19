@@ -1,0 +1,228 @@
+name: Prompt Engineering Patterns
+description: A collection of effective prompt patterns from the prompt engineering literature
+version: 1.0
+author: AI Prompt Generator
+category: meta
+templates:
+
+  - name: Chain of Thought
+    description: Guides the model through a logical reasoning process step by step
+    pattern: |
+      {{task_description}}
+      
+      Let's work through this step by step:
+      1. First, let's understand what's being asked
+      2. Then, break down the approach 
+      3. Work through each component
+      4. Verify the solution
+      
+      {{additional_instructions}}
+    examples:
+      - task_description: "Calculate the profit margin for a product that costs $15 to make and sells for $25."
+        additional_instructions: "Show your reasoning and calculations clearly."
+        
+  - name: Role Prompting
+    description: Assign a specific expert role to get specialized knowledge
+    pattern: |
+      You are an expert {{role}} with deep expertise in {{specialization}}.
+      
+      {{task_description}}
+      
+      Drawing on your extensive knowledge, {{specific_request}}
+    examples:
+      - role: "data scientist"
+        specialization: "time series analysis"
+        task_description: "I need to forecast monthly sales for a retail business with 5 years of historical data."
+        specific_request: "suggest the best approach and explain the implementation steps."
+        
+  - name: Few-Shot Learning
+    description: Provide examples of the desired input-output pattern
+    pattern: |
+      I need you to {{task_description}}.
+      
+      Here are some examples:
+      
+      Input: {{example_input_1}}
+      Output: {{example_output_1}}
+      
+      Input: {{example_input_2}}
+      Output: {{example_output_2}}
+      
+      Input: {{user_input}}
+      Output:
+    examples:
+      - task_description: "classify customer feedback as positive, negative, or neutral"
+        example_input_1: "The service was excellent and the staff was very friendly."
+        example_output_1: "Positive"
+        example_input_2: "The product arrived damaged and customer support was unhelpful."
+        example_output_2: "Negative"
+        user_input: "The delivery was on time but the packaging could be improved."
+        
+  - name: Tree of Thoughts
+    description: Explore multiple reasoning paths simultaneously
+    pattern: |
+      {{task_description}}
+      
+      Let's explore this problem through multiple approaches:
+      
+      Approach 1: {{approach_1_name}}
+      {{approach_1_reasoning}}
+      
+      Approach 2: {{approach_2_name}}
+      {{approach_2_reasoning}}
+      
+      Approach 3: {{approach_3_name}}
+      {{approach_3_reasoning}}
+      
+      After considering multiple approaches, the best solution is:
+    examples:
+      - task_description: "What's the most effective marketing strategy for a new fitness app?"
+        approach_1_name: "Social Media Focus"
+        approach_1_reasoning: "Targeting fitness enthusiasts on Instagram and TikTok with video content..."
+        approach_2_name: "Content Marketing"
+        approach_2_reasoning: "Creating valuable blog content about fitness tips and workout routines..."
+        approach_3_name: "Influencer Partnerships"
+        approach_3_reasoning: "Collaborating with fitness influencers to promote the app to their followers..."
+        
+  - name: ReAct (Reasoning + Acting)
+    description: Combining reasoning with specific actions for complex tasks
+    pattern: |
+      {{task_description}}
+      
+      I'll solve this step by step, using both reasoning and specific actions.
+      
+      Thought 1: {{initial_thought}}
+      Action 1: {{initial_action}}
+      Observation 1: {{observation_after_action}}
+      
+      Thought 2: {{second_thought}}
+      Action 2: {{second_action}}
+      Observation 2: {{second_observation}}
+      
+      Final Thought: {{conclusion}}
+      Final Answer: {{final_solution}}
+    examples:
+      - task_description: "Find the most efficient algorithm for sorting a large dataset with mostly-sorted elements"
+        initial_thought: "I need to consider algorithms that perform well on nearly-sorted data"
+        initial_action: "Compare time complexity of standard sorting algorithms on nearly-sorted data"
+        observation_after_action: "Insertion sort and Timsort have excellent performance on nearly-sorted data"
+        second_thought: "I should consider memory usage alongside time complexity"
+        second_action: "Analyze space complexity of Insertion sort vs Timsort"
+        second_observation: "Timsort uses more memory but has better worst-case performance"
+        conclusion: "For large datasets that are mostly sorted, Timsort offers the best balance"
+        final_solution: "Use Timsort for large, mostly-sorted datasets due to its adaptive nature and excellent performance characteristics"
+        
+  - name: Step-by-Step Instruction
+    description: Breaking down a complex task into clear sequential steps
+    pattern: |
+      To {{task_objective}}, follow these steps:
+      
+      1. {{step_1}}
+      2. {{step_2}}
+      3. {{step_3}}
+      4. {{step_4}}
+      5. {{step_5}}
+      
+      Important considerations:
+      - {{consideration_1}}
+      - {{consideration_2}}
+      - {{consideration_3}}
+    examples:
+      - task_objective: "implement a secure user authentication system"
+        step_1: "Define user model with proper password hashing (use bcrypt)"
+        step_2: "Create registration endpoint with email verification"
+        step_3: "Implement login with rate limiting protection"
+        step_4: "Add JWT token generation and validation"
+        step_5: "Include password reset functionality with secure tokens"
+        consideration_1: "Never store plaintext passwords"
+        consideration_2: "Implement HTTPS for all authentication endpoints"
+        consideration_3: "Add two-factor authentication support"
+        
+  - name: Context-Setting Prompt
+    description: Providing detailed context before making a request
+    pattern: |
+      ## Context
+      {{background_information}}
+      
+      ## Current Situation
+      {{current_state}}
+      
+      ## Objective
+      {{goal}}
+      
+      ## Request
+      {{specific_request}}
+      
+      ## Constraints
+      {{limitations_or_requirements}}
+    examples:
+      - background_information: "Our company is a mid-sized e-commerce retailer specializing in sustainable home goods. We've been operating for 5 years and have a customer base primarily in North America."
+        current_state: "Our current marketing efforts are scattered across multiple channels with inconsistent messaging and branding."
+        goal: "We want to create a cohesive marketing strategy that emphasizes our sustainability commitment while increasing conversion rates."
+        specific_request: "Design a comprehensive 6-month marketing plan with channel-specific tactics and metrics for success."
+        limitations_or_requirements: "Budget is limited to $50,000. Must include social media, email, and content marketing. Need to see expected ROI for each channel."
+        
+  - name: XML Tagging Prompt
+    description: Using XML tags to structure the desired output format
+    pattern: |
+      {{task_description}}
+      
+      Please structure your response using the following XML format:
+      
+      <response>
+        <{{section_1_name}}>
+          {{section_1_description}}
+        </{{section_1_name}}>
+        
+        <{{section_2_name}}>
+          {{section_2_description}}
+        </{{section_2_name}}>
+        
+        <{{section_3_name}}>
+          {{section_3_description}}
+        </{{section_3_name}}>
+      </response>
+    examples:
+      - task_description: "Analyze the potential impact of artificial intelligence on the job market over the next decade."
+        section_1_name: "current_state"
+        section_1_description: "An overview of AI's current impact on employment"
+        section_2_name: "predictions"
+        section_2_description: "Specific predictions about which industries and job types will be most affected"
+        section_3_name: "recommendations"
+        section_3_description: "Practical recommendations for workers, businesses, and policymakers"
+        
+  - name: Emotional Stimuli Prompt
+    description: Using emotional phrases that have been shown to improve AI performance
+    pattern: |
+      {{task_description}}
+      
+      {{emotional_phrase}}
+      
+      {{specific_request}}
+    examples:
+      - task_description: "I need to solve this complex optimization problem for resource allocation in a manufacturing process."
+        emotional_phrase: "This is very important to my career. Take a deep breath and work on this problem step-by-step."
+        specific_request: "First identify the constraints, then formulate the objective function, and finally determine the optimal allocation."
+        
+  - name: Self-Consistency Prompt
+    description: Generate multiple solutions and determine the most consistent one
+    pattern: |
+      {{task_description}}
+      
+      Solve this problem in multiple different ways:
+      
+      Solution 1:
+      {{approach_instruction_1}}
+      
+      Solution 2:
+      {{approach_instruction_2}}
+      
+      Solution 3:
+      {{approach_instruction_3}}
+      
+      After generating these different solutions, identify which answer is most consistent and explain why it's the most reliable.
+    examples:
+      - task_description: "Calculate the compound interest on a $10,000 investment with 5% annual interest rate after 3 years."
+        approach_instruction_1: "Use the compound interest formula A = P(1 + r)^t"
+        approach_instruction_2: "Calculate it year by year, adding the interest to the principal each time"
+        approach_instruction_3: "Use a logarithmic approach with continuous compounding" 

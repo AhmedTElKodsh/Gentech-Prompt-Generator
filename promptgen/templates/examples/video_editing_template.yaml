@@ -1,0 +1,213 @@
+name: "Video Editing Template"
+domain: "content"
+description: "Template for video editing, post-production, and video creation tasks"
+complexity_range: [1, 5]
+tags: ["video", "editing", "post-production", "filmmaking"]
+
+sections:
+  - name: "Context"
+    position: 1
+    required: true
+    description: "Background information about the video project"
+    content_template: |
+      # Project Context
+      
+      You are tasked with {objective}
+      
+      Project details:
+      - Video Type: {video_type}
+      - Target Platform: {platform}
+      - Target Audience: {audience}
+
+  - name: "Video Editing"
+    position: 2
+    required: true
+    description: "Specific guidelines for video editing approach"
+    content_template: |
+      # Video Editing Guidelines
+      
+      ## Technical Specifications
+      - Resolution: {resolution}
+      - Frame Rate: {frame_rate}
+      - Aspect Ratio: {aspect_ratio}
+      - Audio: {audio_specs}
+      
+      ## Editing Style and Approach
+      {editing_approach}
+
+  - name: "Visual Elements"
+    position: 3
+    required: false
+    description: "Guidelines for visual elements like color grading, effects, transitions"
+    content_template: |
+      # Visual Elements
+      
+      ## Color Grading
+      {color_grading}
+      
+      ## Transitions and Effects
+      {transitions_and_effects}
+      
+      ## Text and Graphics
+      {text_and_graphics}
+
+  - name: "Audio Guidelines"
+    position: 4
+    required: false
+    description: "Guidelines for audio editing and sound design"
+    content_template: |
+      # Audio Guidelines
+      
+      ## Sound Design
+      {sound_design}
+      
+      ## Music and Soundtrack
+      {music_guidelines}
+      
+      ## Voice and Dialogue
+      {voice_guidelines}
+
+  - name: "Workflow and Process"
+    position: 5
+    required: true
+    description: "Recommended workflow and process steps"
+    content_template: |
+      # Workflow and Process
+      
+      1. Begin with organizing and reviewing all footage
+      2. Create a rough cut focusing on narrative structure
+      3. Refine with precise cuts and transitions
+      4. Add visual effects, text, and graphics as needed
+      5. Color correction and audio enhancement
+      6. Final review for technical quality and storytelling
+      7. Export according to platform specifications
+      
+      ## Timeline
+      {timeline}
+      
+      ## Quality Checkpoints
+      - Review narrative coherence and flow
+      - Ensure technical quality (resolution, compression artifacts, etc.)
+      - Check audio levels and clarity
+      - Verify all text is readable and graphics are clear
+      - Confirm final output meets platform requirements
+
+  - name: "Export Specifications"
+    position: 6
+    required: false
+    description: "Details on export and delivery formats"
+    content_template: |
+      # Export Specifications
+      
+      ## Primary Deliverable
+      - Format: {export_format}
+      - Codec: {export_codec}
+      - Bitrate: {export_bitrate}
+      
+      ## Additional Deliverables
+      {additional_deliverables}
+      
+      ## Platform-Specific Requirements
+      {platform_requirements}
+
+conditional_sections:
+  - condition: "social media short"
+    section:
+      name: "Social Media Optimization"
+      position: 7
+      required: true
+      description: "Optimizations specific to social media platforms"
+      content_template: |
+        # Social Media Optimization
+        
+        ## Platform-Specific Considerations
+        - Instagram: 60-second limit for Reels, use hashtags strategically
+        - TikTok: Focus on trending sounds and hooks in first 3 seconds
+        - YouTube Shorts: Include call-to-action for the main channel
+        
+        ## Engagement Techniques
+        - Begin with a strong hook in the first 3 seconds
+        - Use on-screen text to engage viewers with sound off
+        - Create loop-friendly content where applicable
+        - Include clear call-to-action
+        
+        ## Caption and Metadata Strategy
+        {caption_strategy}
+
+  - condition: "tutorial"
+    section:
+      name: "Tutorial Structure"
+      position: 7
+      required: true
+      description: "Specific guidance for tutorial-style videos"
+      content_template: |
+        # Tutorial Structure
+        
+        ## Introduction (0:00-0:30)
+        - Introduce the subject and end result
+        - Explain who will benefit from this tutorial
+        - Overview of what will be covered
+        
+        ## Step-by-Step Instructions (0:30-X:XX)
+        - Break down process into clear, numbered steps
+        - Show each step clearly with demonstrations
+        - Use text overlays to reinforce key points
+        - Include tips and common mistakes to avoid
+        
+        ## Conclusion (X:XX-End)
+        - Recap what was covered
+        - Show the finished result again
+        - Call-to-action (subscribe, follow, etc.)
+        - Suggestions for related tutorials
+        
+        ## Visual Aids
+        - Use zooms and highlights to emphasize important details
+        - Consider split-screen to show actions and results simultaneously
+        - Include progress indicators to show where viewers are in the process
+
+  - condition: "commercial"
+    section:
+      name: "Commercial Considerations"
+      position: 7
+      required: true
+      description: "Specific guidance for commercial and advertising videos"
+      content_template: |
+        # Commercial Considerations
+        
+        ## Branding Elements
+        - Ensure consistent brand colors throughout
+        - Incorporate logo at strategic points (beginning, end, and key moments)
+        - Maintain brand voice in all text and narration
+        
+        ## Message Structure
+        - Problem introduction (0:00-0:05)
+        - Solution presentation (0:05-0:15)
+        - Product showcase (0:15-0:25)
+        - Call-to-action (0:25-0:30)
+        
+        ## Attention Techniques
+        - Use pattern interrupts to maintain viewer interest
+        - Implement quick cuts for energy and pace
+        - Consider emotion-focused storytelling
+        - Ensure primary message is delivered multiple ways (visually, verbally, textually)
+
+prompt_techniques:
+  - name: "role_prompting"
+    description: "Assumes the role of a professional video editor"
+    applicability: "high"
+  - name: "step_by_step_breakdown"
+    description: "Breaks down the editing process into clear steps"
+    applicability: "high"
+  - name: "visual_reference_examples"
+    description: "Suggests using reference materials and examples"
+    applicability: "medium"
+
+best_practices:
+  - "Always maintain a consistent visual style throughout the video"
+  - "Create a backup system for project files and footage"
+  - "Use adjustment layers for effects that apply to multiple clips"
+  - "Keep organized project folders and naming conventions"
+  - "Render previews of complex sections to ensure smooth playback during editing"
+  - "Use keyboard shortcuts to increase editing efficiency"
+  - "Consider the viewing environment and device when making editing decisions"
+  - "Always review the final export on multiple devices before delivery" 
