@@ -240,6 +240,36 @@ prompt-generator/
 
 MIT 
 
+## References & Acknowledgments
+
+We would like to express our gratitude to the following projects, libraries, and resources that have inspired or contributed to the development of this prompt generator:
+
+### Core Libraries
+- [Streamlit](https://streamlit.io/) - The powerful framework behind our web interface
+- [Flask](https://flask.palletsprojects.com/) - Alternative web framework for the API interface
+- [Python-dotenv](https://github.com/theskumar/python-dotenv) - For managing environment variables
+
+### LLM & AI Integration
+- [OpenAI](https://openai.com/) - For API integration with GPT models
+- [Marimo](https://github.com/marimo-team/marimo) - Reactive notebook inspiration for testing and evaluation
+- [PromptTools](https://github.com/hegelai/prompttools) - Inspired our experimental testing frameworks
+- [Microsoft Prompt-Engine](https://github.com/microsoft/prompt-engine) - Influenced our prompt architecture design
+- [Promptfoo](https://github.com/promptfoo/promptfoo) - Inspired our evaluation methodologies
+
+### Prompt Engineering Resources
+- [Awesome-Prompt-Engineering](https://github.com/promptslab/Awesome-Prompt-Engineering) - Comprehensive resource for prompt techniques
+- [Dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) - Excellent educational materials
+- [Promptify](https://github.com/promptslab/Promptify) - For NLP-specific prompt patterns
+
+### Testing Frameworks
+- [Pytest](https://docs.pytest.org/) - For comprehensive testing suite
+- [Preset-io/Promptimize](https://github.com/preset-io/promptimize) - Evaluation toolkit concepts
+
+### UI/UX
+- [Cursor](https://github.com/bmadcode/cursor-custom-agents-rules-generator) - Integration concepts for IDE enhancement
+
+This project stands on the shoulders of these remarkable open-source projects. We are grateful to their developers and contributors for making their work available to the community.
+
 # Configuration System Tests
 
 This repository contains tests for the configuration management system.
